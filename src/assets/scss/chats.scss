@@ -1,0 +1,286 @@
+.chats {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: 2rem;
+  flex-wrap: wrap;
+
+  .messages {
+    flex: 4 1 0%;
+    min-height: calc(100vh - 167px);
+
+    .el-card {
+      // height: 39.85rem;
+
+      .clearfix {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        div {
+          display: flex;
+          align-items: center;
+          column-gap: 1rem;
+
+          img {
+            border-radius: 50%;
+            border: 2px solid grey;
+            width: 4rem;
+            height: 4rem;
+          }
+        }
+      }
+      .el-card__header {
+        background: #c2d0e0;
+        img {
+          background: white;
+        }
+      }
+      .el-card__body {
+        height: calc(100vh - 352px);
+        padding: 0;
+        overflow: auto;
+        .main {
+          // height: calc(100vh - 225px);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .chats {
+            display: flex;
+            flex-direction: column;
+            // height: calc(100vh - 225px);
+            justify-content: flex-start;
+            padding: 20px;
+
+            .sender {
+              align-self: flex-start;
+              background: lightgrey;
+              padding: 15px 20px;
+              margin-bottom: 1rem;
+              border-radius: 5px;
+            }
+
+            .receiver {
+              align-self: flex-end;
+              background: grey;
+              color: white;
+              padding: 15px 20px;
+              margin-bottom: 1rem;
+              border-radius: 5px;
+            }
+          }
+        }
+        &::-webkit-scrollbar {
+          width: 0.4rem;
+          border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: darkgrey;
+          border-radius: 10px;
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      border-top: 1px solid lightgray;
+      padding-top: 1rem;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+      border-radius: 1rem;
+    }
+  }
+  .contacts {
+    flex: 2 1 0%;
+
+    .el-tabs__nav {
+      display: flex;
+      float: right;
+      width: 100%;
+    }
+
+    .el-tabs {
+      min-height: calc(100vh - 167px);
+      padding: 0;
+      border-radius: 1rem;
+      background: #1d549a33;
+    }
+    .el-tabs--border-card > .el-tabs__header {
+      border-radius: 1rem 1rem 0rem 0rem;
+      height: 59px;
+
+      .el-tabs__item.is-active,
+      .el-tabs__item {
+        display: flex;
+        align-items: center;
+        height: 59px;
+        flex: 1;
+        flex: 1;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: 900;
+      }
+      .el-tabs__item.is-active {
+        background: #1d549a33;
+      }
+    }
+
+    .el-tabs--border-card > .el-tabs__content {
+      padding: 0;
+    }
+
+    #tab-0 {
+      border-radius: 0 1rem 0 0;
+    }
+
+    #tab-1 {
+      border-radius: 1rem 0 0 0;
+    }
+
+    .items {
+      height: 41rem;
+      overflow-y: auto;
+      .item {
+        display: flex;
+        padding: 0.5rem 1rem;
+        align-items: center;
+        border-bottom: 1px solid white;
+
+        img {
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 50%;
+          border: 2px solid grey;
+          background: white;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          row-gap: 0.7rem;
+          padding: 10px 15px;
+        }
+
+        &:hover {
+          background-color: #5b7ba54f;
+          cursor: pointer;
+        }
+
+        .div-detail {
+          column-gap: 0.5rem;
+          display: flex;
+          flex-direction: row;
+          padding: 0;
+          font-size: 0.8rem;
+          // flex-wrap: wrap;
+          // overflow: hidden;
+          // text-overflow: ellipsis;
+          // display: -webkit-box;
+          // -webkit-line-clamp: 1;
+          // -webkit-box-orient: vertical;
+          // width: 80%;
+
+          // .detail:last-child {
+          //   width: 15rem;
+          // }
+        }
+
+        .detail:first-child {
+          font-weight: 900;
+        }
+
+        .detail:last-child {
+          color: #1d549a;
+        }
+        .user-detail {
+          color: black !important;
+        }
+      }
+      &::-webkit-scrollbar {
+        width: 0.4rem;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        border-radius: 10px;
+      }
+    }
+
+    .active-tab {
+      background: #5b7ba5 !important;
+      .detail:last-child {
+        color: white !important;
+      }
+    }
+  }
+
+  .no-selected {
+    flex: 4 1 0%;
+    border-radius: 1rem;
+    border: 1px solid #ebeef5;
+    background-color: #ffffff;
+    overflow: hidden;
+    color: #303133;
+    transition: 0.3s;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    height: calc(100vh - 167px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.7rem;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 2rem;
+    box-sizing: border-box;
+
+    img {
+      width: 50rem;
+    }
+
+    span {
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 2rem;
+    .contacts {
+      flex: unset;
+      width: 335px;
+    }
+    .messages {
+      flex: unset;
+      width: 100%;
+    }
+    .no-selected {
+      width: 100%;
+      font-size: 1.2rem;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .contacts {
+      width: 100%;
+    }
+  }
+}

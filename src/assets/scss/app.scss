@@ -1,0 +1,43 @@
+/* theme color */
+$--color-primary: #13549a;
+$--color-primary-light: #75a0e4;
+$--color-primary-dark: #280680;
+$--color-gray-light: #eceff1;
+$--color-gray-medium: #757575;
+$--color-gray-blue-light: #f3fbff;
+$--color-gray-blue-medium: #d9ddf6;
+$--color-gray-blue-dark: #1d1f38;
+$--color-red: #f44336;
+$--color-blue: #2196f3;
+$--color-light-blue: #3fa0ff;
+$--color-yellow: #ffc107;
+$--color-violet: #bc1965;
+$--color-pink-light: #f0ecf9;
+$--background-color-base: #eff3f6;
+$--font-weight-primary: normal;
+$--link-color: $--color-primary;
+$--link-hover-color: $--color-primary-dark;
+$--font-primary: 'Yekan', Tahoma;
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+$--top-part-height: 60px;
+/* Break-point
+--------------------------*/
+$--sm: 580px !default;
+$--md: 802px !default;
+$--lg: 1200px !default;
+$--xl: 1920px !default;
+
+@import '~element-ui/packages/theme-chalk/src/index';
+@import '~element-ui/packages/theme-chalk/src/icon';
+@import 'fonts';
+@import 'helpers';
+@import 'topnav';
+@import 'global';
+@import 'auth';
+@import 'home';
+@import 'dashboard';
+@import 'swiper';
+@import 'book';
+@import 'profile';
+@import 'post';
+@import 'chats';

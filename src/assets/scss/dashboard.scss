@@ -1,0 +1,227 @@
+.dashboard {
+  padding: 0 !important;
+  .pic {
+    background: #2b85b0;
+    background-image: url(./assets/images/2.jpg);
+    height: calc(100vh - 60px);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .main-logo {
+    width: 41rem;
+  }
+
+  .logo-detail {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url(./assets/images/blob-haikei.svg);
+    width: 600px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Dima';
+    font-size: 4rem;
+    font-weight: 900;
+    flex-direction: column;
+    line-height: 4rem;
+    color: #263238;
+
+    .site-detail {
+      font-size: 2.7rem;
+      font-family: 'Dima';
+    }
+
+    .buttons {
+      margin-top: 3rem;
+    }
+
+    .el-button {
+      width: 8rem;
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 610px) {
+      background-image: none;
+      background: #d0ddeb;
+      font-size: 2.3rem;
+      height: 350px;
+
+      .site-detail {
+        font-size: 1.3rem;
+      }
+
+      .el-button {
+        font-size: 1rem;
+        width: 6rem;
+      }
+    }
+  }
+
+  .newest,
+  .most_popular {
+    display: flex;
+    flex-wrap: wrap;
+    .logo {
+      margin: auto;
+      row-gap: 3rem;
+      img {
+        width: 15rem;
+      }
+    }
+    .main {
+      border-radius: 2rem !important;
+    }
+  }
+
+  .newest {
+    background: #007ebb;
+  }
+
+  .most_popular {
+    background: #00a5bc;
+  }
+
+  .popular_month {
+    border-radius: 2rem !important;
+    width: 96%;
+
+    .el-card__body {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: #90caf9;
+      row-gap: 1rem;
+
+      .month {
+        width: 30rem;
+      }
+
+      .left {
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .title-div {
+        background-image: url(./assets/images/month.svg);
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        color: black;
+        font-weight: 900;
+        width: 30rem;
+        background-repeat: unset;
+        background-size: cover;
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .title {
+          font-size: 2.2rem;
+          color: #1d549a;
+          font-weight: 900;
+          position: absolute;
+          width: 24rem;
+          text-align: center;
+          top: 13.5rem;
+          left: 3rem;
+        }
+
+        @media screen and (max-width: 560px) {
+          width: 20rem;
+          height: 20rem;
+
+          .title {
+            font-size: 2rem;
+            width: 21rem;
+            top: 8.5rem;
+            left: 0rem;
+          }
+        }
+      }
+
+      .main {
+        background: white !important;
+        padding: 3rem;
+        border-radius: 2rem !important;
+        border: 7px solid unset !important;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        column-gap: 5rem;
+
+        .book-title {
+          font-size: 2rem;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          line-height: 3rem;
+          color: #1d549a;
+        }
+      }
+    }
+  }
+
+  .popular_author,
+  .popular_translator {
+    display: flex;
+    flex-wrap: wrap;
+    .logo {
+      margin: auto;
+      row-gap: 1rem;
+      img {
+        width: 13rem;
+      }
+    }
+    .title {
+      font-size: 2rem;
+    }
+    .main {
+      // background: #dacebc !important;
+      border-radius: 2rem !important;
+      // border: 7px solid #cb7b05;
+    }
+  }
+
+  .popular_author {
+    background: #00c8a4;
+
+    .swiper-slide div:first-child {
+      height: 54% !important;
+    }
+    .swiper-container {
+      height: 15rem;
+    }
+  }
+
+  .popular_translator {
+    background: #88e582;
+
+    .logo {
+      img {
+        width: 10rem;
+      }
+    }
+
+    .swiper-slide div:first-child {
+      height: 54% !important;
+    }
+    .swiper-container {
+      height: 15rem;
+    }
+  }
+
+  @media screen and (max-width: 625px) {
+    .swiper-custom {
+      margin: 2rem 0;
+    }
+  }
+}

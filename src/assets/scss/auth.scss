@@ -1,0 +1,72 @@
+.login-page,
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-image: url(./assets/images/stack-of-books.jpg);
+  background-size: cover;
+
+  .logo {
+    font-family: Panda;
+    font-size: 3rem;
+    color: $--color-primary;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .el-card {
+    width: 500px;
+  }
+  .buttons_div {
+    span {
+      font-size: 0.8rem;
+    }
+  }
+  .no_margin {
+    margin: 0 !important;
+  }
+
+  @media screen and (max-width: 520px) {
+    .el-card {
+      width: 100%;
+    }
+    .logo {
+      font-size: 2rem;
+    }
+  }
+}
+
+.signup-page {
+  .el-form-item__content {
+    line-height: normal;
+  }
+  .el-step.is-center .el-step__line {
+    left: -50%;
+    right: 50%;
+  }
+}
+
+.password-validation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1rem;
+  margin-top: 3px;
+  .el-checkbox {
+    margin-right: 0;
+  }
+  .el-checkbox__label {
+    font-size: 0.7rem;
+    padding-right: 5px;
+  }
+  .el-checkbox__input.is-checked + .el-checkbox__label {
+    color: $--color-success;
+  }
+  .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner::after {
+    border-color: $--color-success;
+  }
+  .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner {
+    border-color: $--color-success;
+  }
+}

@@ -1,0 +1,456 @@
+img,
+video {
+  &.responsive {
+    max-width: 100%;
+  }
+}
+.ltr {
+  direction: ltr;
+}
+
+.tahoma {
+  font-family: tahoma;
+  .el-input__inner {
+    font-family: tahoma;
+  }
+}
+
+.text-center {
+  text-align: center !important;
+  .el-input__inner {
+    text-align: center;
+  }
+}
+
+.text-right {
+  text-align: right !important;
+  .el-input__inner {
+    text-align: right;
+  }
+}
+
+.text-left {
+  text-align: left !important;
+  .el-input__inner {
+    text-align: left;
+  }
+}
+
+.text-small {
+  font-size: 0.85rem;
+}
+
+.text-underlined {
+  text-decoration: underline;
+}
+
+.bg-white {
+  background: $--color-white;
+}
+
+.bg-warning {
+  background: $--color-warning-light;
+  color: $--color-warning;
+}
+
+.bg-danger {
+  background: $--color-danger-light;
+  color: $--color-danger;
+}
+
+.bg-success {
+  background: $--color-success-light;
+  color: $--color-success;
+}
+
+.bg-light-gray {
+  background: $--color-gray-light;
+}
+
+.bg-primary {
+  background: $--color-primary;
+  color: $--color-white;
+}
+
+.bg-primary-light {
+  background: $--color-primary-light;
+  color: $--color-white;
+}
+
+.bg-gray-color {
+  background: #f5f5f5;
+}
+
+.error-button {
+  background: #f74242;
+  color: white;
+  border: 1px solid #f74242;
+  &:hover {
+    background-color: #ff9494;
+    color: white;
+    border: 1px solid #ff9494;
+  }
+}
+
+.bg-transparent {
+  background: transparent;
+  &.el-card {
+    background: transparent;
+  }
+}
+
+.border-right-gray {
+  border-right: 1px solid $--color-gray-light;
+}
+
+.border-top-gray {
+  border-top: 1px solid $--color-gray-light;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid $--color-gray-light;
+}
+
+.border-left-gray {
+  border-left: 1px solid $--color-gray-light;
+}
+
+.border-gray {
+  border: 1px solid $--color-gray-light;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.important-full-width {
+  width: 100% !important;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.narrow {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-vert-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.vertical-shadow {
+  box-shadow: 27px 1px 94px -30px rgba(233, 228, 240, 0.63);
+}
+
+.flexbox {
+  display: flex;
+  &.align-center {
+    align-items: center;
+  }
+  &.align-start {
+    align-items: flex-start;
+  }
+  &.align-end {
+    align-items: flex-end;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.justify-start {
+    justify-content: flex-start;
+  }
+  &.justify-end {
+    justify-content: flex-end;
+  }
+  &.justify-around {
+    justify-content: space-around;
+  }
+  &.justify-between {
+    justify-content: space-between;
+  }
+  &.column-direction {
+    flex-direction: column;
+  }
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+.mr-5 {
+  margin-right: 5px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+.mr-25 {
+  margin-right: 25px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-1-rem {
+  margin-top: 1rem;
+}
+
+.mt-2-rem {
+  margin-top: 2rem;
+}
+
+.mt-3-rem {
+  margin-top: 3rem;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.searchable {
+  cursor: pointer;
+}
+
+.line {
+  height: 1px;
+  background-color: #e0e6ed;
+  margin: 14px 0;
+
+  &.dark {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  &.short {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+.field-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  position: relative;
+
+  small {
+    position: relative;
+    top: -10px;
+    color: $--color-gray-medium;
+
+    &.required {
+      color: $--color-red;
+    }
+  }
+  &:not(:first-child) {
+    margin-top: 2rem;
+  }
+}
+
+.field-description {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: $--color-gray-medium;
+  margin-top: 0;
+}
+
+.bold-title {
+  font-weight: 900;
+}
+
+.group:after,
+.group:before {
+  content: '';
+  display: table;
+}
+
+.group:after {
+  clear: both;
+}
+
+.group {
+  zoom: 1;
+}
+
+.hide-overflow-x {
+  overflow-x: hidden !important;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.no-access {
+  cursor: not-allowed;
+  color: $--color-text-placeholder !important;
+}
+
+.circled {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $--color-gray-light;
+  img {
+    max-width: 100%;
+  }
+}
+
+.avatar {
+  width: 40px !important;
+  height: 40px !important;
+  top: 0 !important;
+  border: none !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $--color-gray-light;
+  img {
+    max-width: 100%;
+  }
+}
+
+.compact {
+  .circled,
+  .avatar {
+    width: 28px !important;
+    height: 28px !important;
+    .medium {
+      width: 15px !important;
+      height: 15px !important;
+    }
+  }
+}
+
+.relative-position {
+  position: relative;
+}
+
+.min-h-200 {
+  min-height: 200px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+@media screen and (max-width: #{$--lg}) {
+  .field-description {
+    min-height: 30px;
+  }
+}
+
+@media screen and (max-width: #{$--md}) {
+  .keywords {
+    .field-description {
+      min-height: 80px !important;
+    }
+  }
+}
+
+@media screen and (max-width: #{$--sm}) {
+  .hide-xs {
+    display: none;
+  }
+  .text-right-xs {
+    text-align: right;
+  }
+  .mt-10-xs {
+    margin-top: 10px;
+  }
+  .mt-15-xs {
+    margin-top: 15px;
+  }
+  .field-description {
+    min-height: 80px;
+  }
+}
+
+@media screen and (max-width: #{$--sm}) {
+  input[type='color'],
+  input[type='date'],
+  input[type='datetime'],
+  input[type='datetime-local'],
+  input[type='email'],
+  input[type='month'],
+  input[type='number'],
+  input[type='password'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='text'],
+  input[type='time'],
+  input[type='url'],
+  input[type='week'],
+  select:focus,
+  textarea {
+    font-size: 14px !important;
+  }
+}
+
+@media screen {
+  .hide-screen {
+    display: none;
+  }
+}

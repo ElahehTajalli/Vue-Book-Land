@@ -1,0 +1,145 @@
+.home {
+  .home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin: 2rem;
+
+    .el-button {
+      width: 15rem;
+      height: 15rem;
+      border-radius: 3rem;
+      font-size: 1.3rem;
+      color: #1d549a;
+    }
+    .top-buttons {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 3rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      row-gap: 1rem;
+      border: 1px solid #dcdfe6;
+      border-color: #dcdfe6;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 1.5rem;
+
+      &:hover {
+        border-color: #b8cce1;
+        background-color: #e7eef5;
+      }
+
+      img {
+        width: 6rem;
+      }
+      span {
+        color: black;
+      }
+    }
+    .top-buttons.library {
+      background: white;
+      color: black;
+      img {
+        width: 10rem;
+      }
+    }
+    .top-buttons.post {
+      background: #1edee44d;
+    }
+    .top-buttons.books {
+      background: #8c86c357;
+
+      img {
+        width: 7rem;
+      }
+    }
+    .top-buttons.profile {
+      background: #f9f871ab;
+      row-gap: 0;
+      justify-content: flex-start;
+      img {
+        width: 8.5rem;
+      }
+    }
+    .top-buttons.messages {
+      background: #ff000024;
+      row-gap: 1.4rem;
+      img {
+        width: 6rem;
+      }
+    }
+    .top-buttons.criticisms {
+      background: #a8f89499;
+    }
+
+    @media screen and (max-width: 940px) {
+      margin: 0;
+    }
+  }
+  @media screen and (max-width: 445px) {
+    .top-buttons {
+      width: 8rem !important;
+      height: 8rem !important;
+      font-size: 1rem !important;
+      border-radius: 2rem !important;
+    }
+    .top-buttons.library {
+      img {
+        width: 6rem !important;
+      }
+    }
+    .top-buttons.post {
+      img {
+        width: 3rem !important;
+      }
+    }
+    .top-buttons.profile {
+      img {
+        width: 5.5rem !important;
+      }
+    }
+    .top-buttons.messages {
+      img {
+        width: 3rem !important;
+      }
+    }
+    .top-buttons.books {
+      img {
+        width: 4rem !important;
+      }
+    }
+    .top-buttons.criticisms {
+      img {
+        width: 3.5rem !important;
+      }
+    }
+    .view-post .post .criticisms-title {
+      font-size: 1.2rem !important;
+    }
+    .top .el-button {
+      padding: 9px 15px !important;
+      font-size: 12px !important;
+    }
+  }
+
+  .view-post {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .criticism {
+    .text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}

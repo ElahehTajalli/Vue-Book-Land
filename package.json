@@ -1,0 +1,60 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "css-loader": "^5.2.4",
+    "element-ui": "^2.15.1",
+    "eslint": "^7.26.0",
+    "json-bignum": "0.0.3",
+    "moment-jalaali": "^0.9.2",
+    "moment-timezone": "^0.5.33",
+    "sass": "^1.32.12",
+    "sass-loader": "^10.1.1",
+    "swiper": "^6.7.0",
+    "vue": "^2.6.11",
+    "vue-advanced-cropper": "^1.7.0",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-i18n": "^8.24.4",
+    "vue-quick-menu": "^1.0.7",
+    "vue-router": "^3.5.1",
+    "vue-simple-drawer": "^1.0.6",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,0 +1,183 @@
+* {
+  min-height: 0;
+  min-width: 0;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.page {
+  height: 100%;
+  direction: rtl;
+  background: $--color-gray-light;
+  .project {
+    height: 100%;
+  }
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-family: $--font-primary;
+}
+
+a {
+  text-decoration: unset;
+  color: $--color-primary;
+}
+
+.el-main {
+  padding: 0;
+
+  .vue-simple-drawer {
+    width: 17rem;
+    color: #466a8e;
+    background: #d0ddeb;
+    padding: 0;
+
+    div:last-child {
+      display: flex;
+      flex-direction: column;
+
+      & > span {
+        padding: 1rem 2rem;
+        cursor: pointer;
+
+        &:hover {
+          background: #a8bcd1;
+        }
+      }
+    }
+
+    .close-btn {
+      left: 35px;
+      top: 25px;
+      right: unset;
+    }
+  }
+  .vue-simple-drawer.closeable {
+    padding-top: 60px;
+  }
+}
+
+.vue-simple-drawer .close-btn .leftright,
+.vue-simple-drawer .close-btn .rightleft {
+  background-color: #466a8e !important;
+}
+
+.el-header {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  @media screen and (max-width: 550px) {
+    padding: 0 10px;
+  }
+}
+
+.el-dropdown {
+  cursor: pointer;
+}
+
+.el-message {
+  direction: rtl;
+  .el-message__content {
+    padding-right: 0.5rem;
+  }
+}
+
+.el-footer {
+  padding: 0 20px;
+  font-size: 1.2rem;
+  box-shadow: -2px -8px 41px -14px rgb(202 210 222 / 61%);
+  color: #757575;
+  height: 60px;
+  line-height: 60px;
+
+  div {
+    column-gap: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.main-page {
+  padding: 0;
+  & > div:first-child {
+    min-height: calc(100vh - 120px);
+    box-sizing: border-box;
+    padding: 20px;
+  }
+}
+
+.el-tooltip__popper.is-dark {
+  direction: rtl;
+  max-width: 25rem;
+}
+
+.el-alert__content {
+  word-break: break-word;
+}
+
+.el-input__suffix {
+  left: 5px;
+  right: auto;
+}
+
+.el-input--suffix .el-input__inner {
+  padding-left: 30px;
+  padding-right: 15px;
+}
+
+.el-pagination .btn-prev i,
+.el-pagination .btn-next i {
+  transform: rotate(180deg);
+}
+
+.el-form-item__error {
+  right: 0;
+}
+
+.el-button + .el-button {
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+.el-step__title {
+  font-size: 14px;
+}
+
+.el-form-item__label {
+  float: right !important;
+  padding: 0 !important;
+}
+
+.not_found {
+  background: #f6f6f6;
+}
+
+.el-textarea__inner {
+  word-break: break-word;
+}
+
+.el-card {
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 430px) {
+  .el-message {
+    min-width: 290px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .el-tooltip__popper.is-dark {
+    max-width: 15rem;
+  }
+}
