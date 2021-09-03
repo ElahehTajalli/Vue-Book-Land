@@ -22,20 +22,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Dima';
-    font-size: 4rem;
+    font-family: 'panda';
+    // font-size: 4rem;
+    font-size: 3rem;
     font-weight: 900;
     flex-direction: column;
     line-height: 4rem;
     color: #263238;
 
     .site-detail {
-      font-size: 2.7rem;
-      font-family: 'Dima';
+      // font-size: 2.7rem;
+      font-size: 1.7rem;
+      font-family: 'IRANYekan';
+    }
+
+    .jami {
+      // font-size: 2rem;
+      font-size: 1.5rem;
+      margin-right: 17rem;
     }
 
     .buttons {
-      margin-top: 3rem;
+      margin-top: 0.5rem;
     }
 
     .el-button {
@@ -48,14 +56,19 @@
       background: #d0ddeb;
       font-size: 2.3rem;
       height: 350px;
+      padding-top: 2rem;
 
       .site-detail {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
       }
 
       .el-button {
         font-size: 1rem;
         width: 6rem;
+      }
+
+      .jami {
+        font-size: 1.5rem;
       }
     }
   }

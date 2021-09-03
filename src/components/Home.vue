@@ -39,6 +39,26 @@
         </span>
       </div>
       <div
+        class="flexbox column-direction top-buttons add-quote"
+        @click="quoteDialogVisible = true"
+      >
+        <img src="../assets/images/add_quote.svg" />
+        <span>
+          {{ $t('add_quote') }}
+        </span>
+      </div>
+      <div
+        class="flexbox column-direction top-buttons quote"
+        @click="quoteListDialogVisible = true"
+      >
+        <img
+          src="https://img.icons8.com/material-rounded/128/000000/quote-left.png"
+        />
+        <span>
+          {{ $t('quotes') }}
+        </span>
+      </div>
+      <div
         @click="$router.push({ name: 'BookList' })"
         class="flexbox column-direction top-buttons books"
       >
@@ -74,7 +94,9 @@
       return {
         dialogVisible: false,
         posts: [],
-        loading: false
+        loading: false,
+        quoteDialogVisible: false,
+        quoteListDialogVisible: false
       }
     },
     created() {

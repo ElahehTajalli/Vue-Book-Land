@@ -74,6 +74,11 @@
       background-color: #cfdeeb;
       border-radius: 5px;
     }
+
+    @media screen and (max-width: 585px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &::-webkit-scrollbar {
@@ -96,13 +101,11 @@
   display: flex;
   flex-wrap: wrap;
   background: #376a83;
-  // margin-left: auto;
-  // margin-right: auto;
-  // width: 70%;
 
   .swiper-slide div:first-child:hover {
     transform: unset !important;
     transition-duration: unset !important;
+    cursor: default;
   }
   .logo {
     margin: auto;
@@ -163,6 +166,14 @@
           font-size: 1rem !important;
         }
       }
+    }
+  }
+}
+
+.quote-list {
+  @media screen and (max-width: 840px) {
+    .el-dialog {
+      width: 100% !important;
     }
   }
 }

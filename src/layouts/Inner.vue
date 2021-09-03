@@ -45,13 +45,15 @@
                 </span>
               </div>
               <div class="item" @click="showQuoteDialog()">
-                <img src="../assets/images/add-naghd.png" />
+                <img src="../assets/images/add_quote.svg" />
                 <span>
                   {{ $t('add_quote') }}
                 </span>
               </div>
               <div class="item" @click="showQuoteListDialog()">
-                <img src="../assets/images/add-naghd.png" />
+                <img
+                  src="https://img.icons8.com/material-rounded/48/000000/quote-left.png"
+                />
                 <span>
                   {{ $t('quotes') }}
                 </span>

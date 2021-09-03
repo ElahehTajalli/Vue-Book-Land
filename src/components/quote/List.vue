@@ -7,7 +7,7 @@
     :show-close="false"
     width="50rem"
     top="7vh"
-    class="small"
+    class="small quote-list"
   >
     <div v-if="quotes.length" class="quotes">
       <Quote v-for="q in quotes" :key="q.id" :quote="q" />

@@ -7,6 +7,7 @@
           $t('site_detail1')
         }}</span>
         <span class="site-detail">{{ $t('site_detail2') }}</span>
+        <span class="site-detail jami">{{ $t('jami') }}</span>
         <div v-if="!isAuthenticated" class="buttons">
           <el-button type="primary" @click="$router.push({ name: 'Login' })">
             {{ $t('login') }}
@@ -17,6 +18,7 @@
         </div>
       </div>
       <img class="main-logo" src="../assets/images/dashboard.svg" />
+      <!-- <img class="main-logo" src="../assets/images/reading-book.jpg" /> -->
     </div>
     <SlideShow :quotes="quotes" />
     <Swiper :books="newest" title="newest" class="newest" />

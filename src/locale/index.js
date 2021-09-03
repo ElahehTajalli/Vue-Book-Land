@@ -152,6 +152,7 @@ export const messages = {
       text: 'نقل‌قول',
       book: 'از کتاب'
     },
-    the_quote_was_successfully_added: 'نقل‌قول باموفقیت ذخیره شد.'
+    the_quote_was_successfully_added: 'نقل‌قول باموفقیت ذخیره شد.',
+    jami: 'جامی'
   }
 }

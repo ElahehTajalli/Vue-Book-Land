@@ -244,6 +244,20 @@
           margin-left: 2rem;
           .el-button {
             margin: 0;
+            &:first-child {
+              background: #eef1b6;
+              border-color: #eef1b6;
+            }
+          }
+          .el-button.el-button--primary {
+            background: #8af6c2bd;
+            border-color: #8af6c2bd;
+            color: #606266;
+          }
+          .el-button.el-button--danger {
+            color: #606266;
+            background: #f4a8a8;
+            border-color: #f4a8a8;
           }
         }
 
@@ -435,25 +449,25 @@
   }
   .wants-to-read-swiper {
     // background: #00a5bc;
-    background: #0095c7c9;
+    background: #e3b7b7ba;
     .swiper-custom {
       padding: 1rem 3rem 0 1rem;
     }
   }
   .read-swiper {
     // background: #14c2c3;
-    background: #00a5bca3;
+    background: #00a5bc47;
   }
   .reading-swiper {
     // background: #50dec1;
-    background: #14c2c38f;
+    background: #b9a5283d;
     .swiper-custom {
       padding: 1rem 3rem 0 1rem;
     }
   }
   .favorite {
     // background: #0095c7;
-    background: #4882c5;
+    background: #4882c552;
   }
 
   .my-plan-title {
@@ -468,16 +482,16 @@
     display: none;
 
     &:nth-child(2) {
-      background: #4882c5 !important;
+      background: #4882c552 !important;
     }
     &:nth-child(4) {
-      background: #0095c7c9 !important;
+      background: #e3b7b7ba !important;
     }
     &:nth-child(6) {
-      background: #00a5bca3 !important;
+      background: #00a5bc47 !important;
     }
     &:nth-child(8) {
-      background: #14c2c38f !important;
+      background: #b9a5283d !important;
     }
   }
 
@@ -530,17 +544,17 @@
       background: #b8cbe0 !important;
     }
     &:nth-child(3) {
-      background: #a8b2cf !important;
+      background: #e0b8b899 !important;
     }
     &:nth-child(5) {
-      background: #9c99bb !important;
+      background: #9c99bb8f !important;
     }
     &:nth-child(7) {
-      background: #9480a3 !important;
+      background: #80a38c7d !important;
     }
   }
   .wants-to-read-swiper {
-    background: #a8b2cf;
+    background: #e0b8b899;
     .swiper-custom {
       padding: 1rem 3rem 0 1rem;
     }
@@ -550,14 +564,14 @@
     }
   }
   .read-swiper {
-    background: #9c99bb;
+    background: #9c99bb8f;
     .title {
       top: 0rem !important;
       right: 9rem !important;
     }
   }
   .reading-swiper {
-    background: #9480a3;
+    background: #80a38c7d;
     .swiper-custom {
       padding: 1rem 3rem 0 1rem;
     }
