@@ -113,6 +113,8 @@ export const messages = {
     persian_username: 'نام‌کاربری',
     user_with_this_persian_username_already_exists:
       'کاربری با این نام‌کاربری در سیستم وجود دارد.',
+    'user with this persian username already exists.':
+      'کاربری با این نام‌کاربری در سیستم وجود دارد.',
     following: 'دنبال‌کننده‌ها',
     followers: 'دنبال‌شونده‌ها',
     send_message: 'ارسال پیام',
@@ -135,6 +137,21 @@ export const messages = {
     site_detail1: 'انیس کنج تنهایی کتاب است',
     site_detail2: 'فروغ صبح دانایی کتاب است',
     follower: 'دنبال‌شونده‌ها',
-    'Email or password is wrong!': 'نام کاربری یا کلمه عبور اشتباه است.'
+    'Email or password is wrong!': 'نام کاربری یا کلمه عبور اشتباه است.',
+    complete_profile: 'تکمیل اطلاعات',
+    please_enter_form_that_is_sent_to_email:
+      'لطفا جهت تکمیل فرایند ثبت‌نام به لینکی که به ایمیل {email} ارسال شده‌است مراجعه فرمایید.',
+    'user with this email address already exists.':
+      'ایمیل وارد شده تکراری است.',
+    quotes: 'نقل‌قول‌ها',
+    add_quote: 'افزودن نقل‌قول',
+    author_image: 'تصویر نویسنده',
+    quote: {
+      author: 'نویسنده',
+      author_image: 'تصویر نویسنده',
+      text: 'نقل‌قول',
+      book: 'از کتاب'
+    },
+    the_quote_was_successfully_added: 'نقل‌قول باموفقیت ذخیره شد.'
   }
 }

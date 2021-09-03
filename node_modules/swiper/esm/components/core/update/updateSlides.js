@@ -67,10 +67,12 @@ export default function updateSlides() {
 
   if (rtl) slides.css({
     marginLeft: '',
+    marginBottom: '',
     marginTop: ''
   });else slides.css({
     marginRight: '',
-    marginBottom: ''
+    marginBottom: '',
+    marginTop: ''
   });
   var slidesNumberEvenToRows;
 
@@ -133,7 +135,7 @@ export default function updateSlides() {
         column = i - row * slidesPerRow;
       }
 
-      slide.css(getDirectionLabel('margin-top'), row !== 0 && params.spaceBetween && params.spaceBetween + "px");
+      slide.css(getDirectionLabel('margin-top'), row !== 0 ? params.spaceBetween && params.spaceBetween + "px" : '');
     }
 
     if (slide.css('display') === 'none') continue; // eslint-disable-line

@@ -1,8 +1,8 @@
 import API from '../api/api-class'
 const protocol = 'http:'
 // Smart api calls
-// const siteAPI = new API({ url: `${protocol}//ketabland.pythonanywhere.com` })
-const siteAPI = new API({ url: `${protocol}//127.0.0.1:8000` })
+const siteAPI = new API({ url: `${protocol}//ketabland.pythonanywhere.com` })
+// const siteAPI = new API({ url: `${protocol}//127.0.0.1:8000` })
 
 export const handleRequestResponse = async (
   { commit },

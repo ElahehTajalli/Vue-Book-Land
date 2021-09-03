@@ -45,6 +45,16 @@
     left: -50%;
     right: 50%;
   }
+
+  .signup-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      text-align: center;
+      line-height: 2.5rem;
+    }
+  }
 }
 
 .password-validation {

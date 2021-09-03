@@ -40,18 +40,46 @@ a {
     color: #466a8e;
     background: #d0ddeb;
     padding: 0;
+    overflow: hidden;
 
-    div:last-child {
+    .items {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 1rem;
 
-      & > span {
+      span {
         padding: 1rem 2rem;
-        cursor: pointer;
+      }
+    }
 
-        &:hover {
-          background: #a8bcd1;
-        }
+    .item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      cursor: pointer;
+      height: 5rem;
+      padding-right: 4rem;
+
+      &:hover {
+        background: #a8bcd1;
+      }
+
+      img {
+        width: 3rem;
+      }
+    }
+
+    .item.profile {
+      padding-right: 2.8rem;
+
+      img {
+        width: 4rem;
+      }
+
+      span {
+        padding: 1rem 1.7rem;
       }
     }
 

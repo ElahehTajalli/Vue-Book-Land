@@ -1,7 +1,6 @@
 <template>
   <div class="dashboard" v-loading.fullscreen.lock="loading">
     <div class="flexbox justify-around align-center wrap">
-      <!-- <div class="pic"></div> -->
       <div class="logo-detail">
         <span>{{ $t('book_land') }}</span>
         <span style="marginTop: 1rem" class="site-detail">{{
@@ -17,9 +16,9 @@
           </el-button>
         </div>
       </div>
-      <!-- <img class="main-logo" src="../assets/images/blob-haikei.svg" /> -->
       <img class="main-logo" src="../assets/images/dashboard.svg" />
     </div>
+    <SlideShow :quotes="quotes" />
     <Swiper :books="newest" title="newest" class="newest" />
     <Swiper :books="mostPopular" title="most_popular" class="most_popular" />
     <div
@@ -47,14 +46,8 @@
             <span class="book-genre">{{ mostPopular[0].genre }}</span>
           </div>
         </div>
-        <!-- </div> -->
       </el-card>
     </div>
-    <!-- <Swiper
-      :books="[mostPopular[0]]"
-      title="most_popular"
-      class="popular_month"
-    /> -->
     <Swiper
       :users="authors"
       title="most_popular_authors"
@@ -71,6 +64,7 @@
 <script>
   import { mapActions, mapGetters } from 'vuex'
   import Swiper from '@/components/Swiper'
+  import SlideShow from '@/components/SlideShow'
   export default {
     data() {
       return {
@@ -78,10 +72,12 @@
         mostPopular: [],
         authors: [],
         translators: [],
-        loading: false
+        loading: false,
+        quotes: []
       }
     },
     async created() {
+      await this.getQuotes()
       await this.handleGetBooks('created_at:desc', 'newest')
       await this.handleGetBooks('rate:desc', 'mostPopular')
       await this.handleGetAuthors('rate:desc')
@@ -92,8 +88,20 @@
     },
     methods: {
       ...mapActions(['handleRequest']),
-      handleGetBooks(sort, list) {
+      getQuotes() {
         this.loading = true
+        this.handleRequest({
+          name: 'quotes/',
+          action: 'getAll'
+        })
+          .then((res) => {
+            this.quotes = res.data.quotes
+          })
+          .finally(() => {
+            this.loading = false
+          })
+      },
+      handleGetBooks(sort, list) {
         this.handleRequest({
           name: 'books/list',
           action: 'getAll',
@@ -142,7 +150,8 @@
       }
     },
     components: {
-      Swiper
+      Swiper,
+      SlideShow
     }
   }
 </script>

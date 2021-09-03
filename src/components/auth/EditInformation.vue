@@ -5,7 +5,7 @@
     </div>
     <el-card>
       <div slot="header" class="clearfix">
-        <span>{{ $t('submit_profile') }}</span>
+        <span>{{ $t('complete_profile') }}</span>
       </div>
       <div>
         <el-form
@@ -15,6 +15,12 @@
           label-position="top"
           :disabled="loading"
         >
+          <el-form-item prop="persian_username">
+            <el-input
+              v-model="submitForm.persian_username"
+              :placeholder="$t('persian_username')"
+            ></el-input>
+          </el-form-item>
           <el-form-item prop="password">
             <el-input
               autocomplete="new-password"
@@ -50,7 +56,11 @@
             </el-input>
           </el-form-item>
           <el-form-item class="flexbox align-center justify-center no_margin">
-            <el-button type="primary" @click="handleSubmit" :loading="loading">
+            <el-button
+              type="primary"
+              @click="handleSubmitForm"
+              :loading="loading"
+            >
               {{ $t('submit') }}
             </el-button>
           </el-form-item>
@@ -171,6 +181,16 @@
         this.passNumber = true
         this.persianPass = true
       },
+      handleSubmitForm() {
+        this.$refs.submitForm.validate((valid) => {
+          if (valid) {
+            this.loading = true
+            this.handleSubmit()
+          } else {
+            return false
+          }
+        })
+      },
       handleSubmit() {
         let formData = new FormData()
         formData.append('persian_username', this.submitForm.persian_username)
@@ -190,32 +210,9 @@
             this.disableLoading()
             this.$message({
               type: 'error',
-              message: this.$i18n.t(error.response.data.errors),
-              customClass: 'bg-error-dark'
-            })
-          })
-      },
-      handleCheckVerificationCode() {
-        let formData = new FormData()
-        console.log(this.submitForm)
-        formData.append('email', this.submitForm.email)
-        formData.append('code', this.verificationCodeForm.code)
-        this.handleRequest({
-          name: 'users/check_verification',
-          action: 'create',
-          data: formData
-        })
-          .then((res) => {
-            this.disableLoading()
-            this.setTokens(res.token)
-            this.$router.push({ path: `/home` })
-            //redirect
-          })
-          .catch((error) => {
-            this.disableLoading()
-            this.$message({
-              type: 'error',
-              message: this.$i18n.t(error.response.data.errors),
+              message: this.$i18n.t(
+                error.response.data.errors.persian_username
+              ),
               customClass: 'bg-error-dark'
             })
           })
@@ -229,11 +226,6 @@
       },
       changeRoute(name) {
         this.$router.push({ name })
-      },
-      goToStepOne() {
-        this.activeStep = 0
-        this.$refs['verificationCodeForm'].resetFields()
-        this.$refs['submitForm'].resetFields()
       }
     },
     created() {

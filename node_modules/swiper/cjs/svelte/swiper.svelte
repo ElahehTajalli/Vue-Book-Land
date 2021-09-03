@@ -17,6 +17,7 @@
 
   let className = undefined;
   export { className as class };
+  export let modules = null;
 
   let containerClasses = 'swiper-container';
   let breakpointChanged = false;
@@ -79,7 +80,7 @@
     },
   });
 
-  swiperInstance = initSwiper(swiperParams);
+  swiperInstance = initSwiper(swiperParams, modules);
   if (swiperInstance.virtual && swiperInstance.params.virtual.enabled) {
     const extendWith = {
       cache: false,
@@ -125,7 +126,15 @@
       swiperInstance &&
       !swiperInstance.destroyed
     ) {
-      updateSwiper(swiperInstance, passedParams, changedParams);
+      updateSwiper({
+        swiper: swiperInstance,
+        passedParams,
+        changedParams,
+        nextEl,
+        prevEl,
+        scrollbarEl,
+        paginationEl,
+      });
     }
     breakpointChanged = false;
     oldPassedParams = passedParams;

@@ -14,7 +14,7 @@ import { store } from './store'
 import locale from './locale/element/lang/fa.js'
 import { messages } from './locale/index.js'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import SwiperCore, { Navigation, Pagination } from 'swiper/core'
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper/core'
 import '@/assets/icons/style.css'
 import 'swiper/swiper.scss'
 import 'swiper/swiper-bundle.css'
@@ -22,7 +22,7 @@ import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 
 Vue.config.productionTip = false
-SwiperCore.use([Navigation, Pagination])
+SwiperCore.use([Navigation, Pagination, Autoplay])
 
 Vue.component('inner-layout', Inner)
 Vue.component('outer-layout', Outer)
