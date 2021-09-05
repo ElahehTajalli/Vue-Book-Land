@@ -43,14 +43,14 @@
         <div class="items">
           <div
             v-for="c in following"
-            :key="c.follower.id"
+            :key="c.following.id"
             class="item"
-            @click="setRoute(c.follower.id, false)"
+            @click="setRoute(c.following.id, false)"
           >
             <img
               class="user-picture"
-              v-if="c.follower.image"
-              :src="'http://ketabland.pythonanywhere.com' + c.follower.image"
+              v-if="c.following.image"
+              :src="'http://ketabland.pythonanywhere.com' + c.following.image"
             />
             <img
               v-else
@@ -59,7 +59,7 @@
             />
             <div>
               <span class="detail user-detail">{{
-                c.follower.persian_username
+                c.following.persian_username
               }}</span>
             </div>
           </div>
@@ -166,7 +166,7 @@
           action: 'getAll',
           data: {
             query: {
-              following_id: this.self.id
+              follower_id: this.self.id
             }
           }
         }).then((res) => {
