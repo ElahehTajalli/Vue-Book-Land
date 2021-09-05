@@ -25,20 +25,6 @@
         </div>
       </div>
     </el-card>
-    <!-- <div class="post-summary">
-      <el-card v-if="book.summary">
-        <div slot="header" class="clearfix">
-          <span>{{ $t('book.summary') }}</span>
-        </div>
-        <span class="summary"> {{ book.summary }} </span>
-      </el-card>
-      <el-card class="post" v-if="posts.length">
-        <div slot="header" class="clearfix">
-          <span>{{ $t('criticisms') }}</span>
-        </div>
-        <Criticism v-for="p in posts" :key="p.id" :post="p" />
-      </el-card>
-    </div> -->
     <div
       class="full-width flexbox column-direction align-center"
       style="flex: 1 1 0%;"
@@ -51,9 +37,16 @@
           <div class="top">
             <div class="detail">
               <img
+                v-if="post.critic.image"
+                class="image"
+                :src="'http://ketabland.pythonanywhere.com' + post.critic.image"
+              />
+              <img
+                v-else
                 class="image"
                 src="https://img.icons8.com/cotton/64/000000/person-male--v2.png"
               />
+
               <span v-if="post.critic" @click="showUser(post.critic.id)">
                 {{ post.critic.persian_username }}
               </span>

@@ -3,6 +3,12 @@
     <div class="top">
       <div class="detail">
         <img
+          v-if="comment.user.image"
+          class="image"
+          :src="'http://ketabland.pythonanywhere.com' + comment.user.image"
+        />
+        <img
+          v-else
           class="image"
           src="https://img.icons8.com/cotton/64/000000/person-male--v2.png"
         />

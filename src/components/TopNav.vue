@@ -13,11 +13,11 @@
         <img
           class="logo"
           @click="handleRouting('Dashboard')"
-          src="../assets/images/BookLand.png"
+          src="../assets/images/logo1.jpg"
         />
-        <!-- <b @click="handleRouting('Dashboard')">
+        <b @click="handleRouting('Dashboard')">
           {{ $t('book_land') }}
-        </b> -->
+        </b>
         <el-select
           v-if="windowWidth > 940"
           v-model="search"
