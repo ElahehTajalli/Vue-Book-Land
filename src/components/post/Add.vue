@@ -82,7 +82,6 @@
     },
     data() {
       return {
-        books: [],
         loading: false,
         bookDialog: false,
         addPostForm: {
@@ -118,10 +117,10 @@
       this.handleGetBooks()
     },
     computed: {
-      ...mapGetters(['self'])
+      ...mapGetters(['self', 'books'])
     },
     methods: {
-      ...mapActions(['handleRequest']),
+      ...mapActions(['handleRequest', 'setBooks']),
       addPost() {
         this.loading = true
         let formData = new FormData()
@@ -167,7 +166,7 @@
             }
           }
         }).then((res) => {
-          this.books = res.data.books
+          this.setBooks(res.data.books)
         })
       },
       handleCloseBookDialog() {

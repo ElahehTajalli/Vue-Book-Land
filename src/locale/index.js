@@ -153,6 +153,12 @@ export const messages = {
       book: 'از کتاب'
     },
     the_quote_was_successfully_added: 'نقل‌قول باموفقیت ذخیره شد.',
-    jami: 'جامی'
+    jami: 'جامی',
+    not_found: 'متاسفانه {word} یافت نشد!',
+    error: {
+      user: 'کاربری',
+      book: 'کتابی',
+      post: 'نقدی'
+    }
   }
 }

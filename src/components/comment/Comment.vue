@@ -12,7 +12,9 @@
           class="image"
           src="https://img.icons8.com/cotton/64/000000/person-male--v2.png"
         />
-        <span v-if="comment.user"> {{ comment.user.persian_username }}</span>
+        <span @click="showUser(comment.user.id)" v-if="comment.user">
+          {{ comment.user.persian_username }}</span
+        >
       </div>
     </div>
     <span class="text">{{ comment.text }}</span>
@@ -81,6 +83,9 @@
         }).then((res) => {
           this.new_comment = res.data.comment
         })
+      },
+      showUser(id) {
+        this.$router.push({ name: 'ViewUser', params: { id } })
       }
     }
   }

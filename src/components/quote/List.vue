@@ -20,7 +20,7 @@
 
 <script>
   import Quote from '@/components/quote/Quote'
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   export default {
     props: {
       dialogVisible: {
@@ -30,15 +30,17 @@
     },
     data() {
       return {
-        loading: false,
-        quotes: []
+        loading: false
       }
     },
     created() {
       this.getQuotes()
     },
+    computed: {
+      ...mapGetters(['quotes'])
+    },
     methods: {
-      ...mapActions(['handleRequest']),
+      ...mapActions(['handleRequest', 'setQuotes']),
       getQuotes() {
         this.loading = true
         this.handleRequest({
@@ -46,7 +48,7 @@
           action: 'getAll'
         })
           .then((res) => {
-            this.quotes = res.data.quotes
+            this.setQuotes(res.data.quotes)
           })
           .finally(() => {
             this.loading = false

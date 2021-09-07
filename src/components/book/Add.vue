@@ -7,7 +7,7 @@
       :close-on-escape="false"
       :show-close="false"
       width="40rem"
-      top="7vh"
+      top="5vh"
       class="small add-book"
     >
       <el-form :model="addBookForm" ref="addBook" :rules="rules">
@@ -75,6 +75,7 @@
             class="rtl"
             resize="none"
             v-model="addBookForm.summary"
+            :rows="4"
           ></el-input>
         </el-form-item>
         <el-form-item :label="$t('book.image')" prop="image">
@@ -154,7 +155,7 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   import { Cropper } from 'vue-advanced-cropper'
   import 'vue-advanced-cropper/dist/style.css'
   export default {
@@ -225,6 +226,13 @@
               message: this.$i18n.t('field_required'),
               trigger: 'blur'
             }
+          ],
+          image: [
+            {
+              required: true,
+              message: this.$i18n.t('field_required'),
+              trigger: 'blur'
+            }
           ]
         }
       }
@@ -233,8 +241,11 @@
       this.handleGetAuthors()
       this.handleGetTranslators()
     },
+    computed: {
+      ...mapGetters(['books'])
+    },
     methods: {
-      ...mapActions(['handleRequest']),
+      ...mapActions(['handleRequest', 'setBooks']),
       addBook() {
         this.loading = true
         let formData = new FormData()
@@ -249,13 +260,16 @@
           action: 'create',
           data: formData
         })
-          .then(() => {
+          .then((res) => {
             this.$message({
               type: 'success',
               message: this.$i18n.t('the_book_was_successfully_added')
             })
+            let books = this.books
+            books.push(res)
+            this.setBooks(books)
+
             this.handleClose()
-            // this.$emit('get-advertisements')
             this.loading = false
           })
           .catch(() => {
@@ -274,6 +288,7 @@
         this.imageList = []
         this.file = ''
         this.imageFile = ''
+        this.addBookForm.image = ''
         this.showImage = false
       },
       handleGetAuthors() {
@@ -306,6 +321,7 @@
         this.imageList = []
         this.showImage = false
         this.showCropper = 'block'
+        this.addBookForm.image = ''
       },
       handleAvatarSuccess(res, file) {
         let index = file.length - 1
@@ -348,6 +364,7 @@
           this.file = new File([blob], this.file.name)
           this.imageFile = new File([blob], this.file.name)
         }, this.file.raw.type)
+        this.addBookForm.image = this.imageFile
       }
     },
     components: {

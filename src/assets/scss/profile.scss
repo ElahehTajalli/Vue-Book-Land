@@ -638,3 +638,31 @@
     row-gap: 1rem;
   }
 }
+
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  img {
+    width: 36rem;
+  }
+  span {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-top: 2rem;
+  }
+  a {
+    margin-top: 1rem;
+    font-weight: 900;
+  }
+
+  @media screen and (max-width: 530px) {
+    img {
+      width: 100%;
+    }
+    span {
+      font-size: 1.5rem;
+    }
+  }
+}

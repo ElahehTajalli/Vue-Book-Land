@@ -74,8 +74,7 @@
         mostPopular: [],
         authors: [],
         translators: [],
-        loading: false,
-        quotes: []
+        loading: false
       }
     },
     async created() {
@@ -86,10 +85,10 @@
       await this.handleGetTranslators('rate:desc')
     },
     computed: {
-      ...mapGetters(['isAuthenticated'])
+      ...mapGetters(['isAuthenticated', 'quotes'])
     },
     methods: {
-      ...mapActions(['handleRequest']),
+      ...mapActions(['handleRequest', 'setQuotes']),
       getQuotes() {
         this.loading = true
         this.handleRequest({
@@ -97,7 +96,7 @@
           action: 'getAll'
         })
           .then((res) => {
-            this.quotes = res.data.quotes
+            this.setQuotes(res.data.quotes)
           })
           .finally(() => {
             this.loading = false

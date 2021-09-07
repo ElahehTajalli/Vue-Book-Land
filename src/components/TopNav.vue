@@ -20,6 +20,7 @@
         </b>
         <el-select
           v-if="windowWidth > 940"
+          clearable
           v-model="search"
           filterable
           remote
@@ -33,9 +34,12 @@
             :key="item.id"
             :label="item.name"
             :value="item.id"
+            @click="showBook(item.id)"
           >
-            <span>{{ item.name }}</span>
-            <span style="display:block">{{ item.author.name }}</span>
+            <div @click="showBook(item.id)">
+              <span>{{ item.name }}</span>
+              <span style="display:block">{{ item.author.name }}</span>
+            </div>
           </el-option>
         </el-select>
       </div>
@@ -88,6 +92,7 @@
       v-if="windowWidth <= 940"
       v-model="search"
       filterable
+      clearable
       remote
       reserve-keyword
       :placeholder="$t('search_book')"
@@ -100,8 +105,10 @@
         :label="item.name"
         :value="item.id"
       >
-        <span>{{ item.name }}</span>
-        <span style="display:block">{{ item.author.name }}</span>
+        <div @click="showBook(item.id)">
+          <span>{{ item.name }}</span>
+          <span style="display:block">{{ item.author.name }}</span>
+        </div>
       </el-option>
     </el-select>
   </div>
@@ -115,18 +122,18 @@
         windowWidth: window.innerWidth,
         options: [],
         search: [],
-        books: [],
         loading: false
       }
     },
     computed: {
-      ...mapGetters(['isAuthenticated', 'self', 'showMenu'])
+      ...mapGetters(['isAuthenticated', 'self', 'books', 'showMenu'])
     },
     methods: {
       ...mapActions([
         'handleRequest',
         'setFullscreen',
         'setSelf',
+        'setBooks',
         'setShowMenu'
       ]),
       getData() {
@@ -136,19 +143,6 @@
         })
           .then((res) => {
             this.setSelf(res.data)
-          })
-          .catch(() => {
-            // if (
-            //   this.$route.name !== 'Dashboard' &&
-            //   this.$route.name !== 'Advertisements' &&
-            //   this.$route.name !== 'View'
-            // ) {
-            //   this.$router.push({
-            //     name: 'Dashboard',
-            //     params: { showAlert: false }
-            //   })
-            // }
-            // this.logout()
           })
           .finally(() => {
             this.setFullscreen(false)
@@ -180,7 +174,7 @@
             }
           }
         }).then((res) => {
-          this.books = res.data.books
+          this.setBooks(res.data.books)
         })
       },
       handleRouting(name) {
@@ -190,6 +184,9 @@
       },
       toggle() {
         this.setShowMenu(!this.showMenu)
+      },
+      showBook(id) {
+        this.$router.push({ name: 'ViewBook', params: { id } })
       }
     },
     created() {

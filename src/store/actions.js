@@ -55,3 +55,15 @@ export const setLastRequestedPath = ({ commit }, lastRequestedPath) => {
 export const setShowMenu = ({ commit }, showMenu) => {
   commit('SET_SHOW_MENU', showMenu)
 }
+
+export const setPosts = ({ commit }, posts) => {
+  commit('SET_POSTS', posts)
+}
+
+export const setBooks = ({ commit }, books) => {
+  commit('SET_BOOKS', books)
+}
+
+export const setQuotes = ({ commit }, quotes) => {
+  commit('SET_QUOTES', quotes)
+}

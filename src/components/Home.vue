@@ -70,6 +70,14 @@
       :dialogVisible="dialogVisible"
       @close-dialog="dialogVisible = false"
     />
+    <AddQuote
+      :dialogVisible="quoteDialogVisible"
+      @close-dialog="quoteDialogVisible = false"
+    />
+    <List
+      :dialogVisible="quoteListDialogVisible"
+      @close-dialog="quoteListDialogVisible = false"
+    />
     <div class="view-post">
       <div
         class="post flexbox column-direction align-center"
@@ -88,6 +96,8 @@
   import { mapActions } from 'vuex'
   import AddPost from '@/components/post/Add'
   import Criticism from '@/components/post/Criticism'
+  import AddQuote from '@/components/quote/Add'
+  import List from '@/components/quote/List'
 
   export default {
     data() {
@@ -118,7 +128,9 @@
     },
     components: {
       AddPost,
-      Criticism
+      Criticism,
+      AddQuote,
+      List
     }
   }
 </script>

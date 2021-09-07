@@ -18,7 +18,6 @@ import MyLibrary from './components/MyLibrary.vue'
 import { store } from '@/store'
 
 const ifNotAuthenticated = (to, from, next) => {
-  console.log('inja', store.getters.isAuthenticated, store.getters.token)
   if (!store.getters.isAuthenticated) {
     next()
     return
@@ -29,19 +28,10 @@ const ifNotAuthenticated = (to, from, next) => {
 const ifAuthenticated = (to, from, next) => {
   const { getters } = store
   const { isAuthenticated } = getters
-  // const { path } = to
-  console.log(to)
-  // store.commit('SET_LAST_REQUESTED_PATH', path)
   if (isAuthenticated) {
-    // if (from.name === 'edit_rule') {
-    //   next(false)
-    //   showMessage(next)
-    //   return
-    // }
     next()
     return
   }
-  console.log(from)
   next('/')
 }
 

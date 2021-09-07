@@ -96,7 +96,6 @@
             callback(new Error(this.$i18n.t('wrong_password')))
           }
         } else {
-          console.log('else')
           this.setPasswordValidation()
           callback()
         }

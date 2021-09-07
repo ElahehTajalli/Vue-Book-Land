@@ -105,7 +105,7 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   import { Cropper } from 'vue-advanced-cropper'
   import 'vue-advanced-cropper/dist/style.css'
   export default {
@@ -161,8 +161,11 @@
         }
       }
     },
+    computed: {
+      ...mapGetters(['quotes'])
+    },
     methods: {
-      ...mapActions(['handleRequest']),
+      ...mapActions(['handleRequest', 'setQuotes']),
       addQuote() {
         this.loading = true
         let formData = new FormData()
@@ -177,11 +180,14 @@
           action: 'create',
           data: formData
         })
-          .then(() => {
+          .then((res) => {
             this.$message({
               type: 'success',
               message: this.$i18n.t('the_quote_was_successfully_added')
             })
+            let quotes = this.quotes
+            quotes.unshift(res)
+            this.setQuotes(quotes)
             this.handleClose()
             this.loading = false
           })
@@ -201,11 +207,13 @@
         this.imageList = []
         this.file = ''
         this.imageFile = ''
+        this.addQuoteForm.author_image = ''
         this.showImage = false
       },
       handleRemove() {
         this.imageList = []
         this.showImage = false
+        this.addQuoteForm.author_image = ''
         this.showCropper = 'block'
       },
       handleAvatarSuccess(res, file) {

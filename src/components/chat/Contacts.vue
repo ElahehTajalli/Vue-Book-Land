@@ -146,7 +146,6 @@
       },
       setRoute(index, isChat = true) {
         if (isChat) {
-          console.log(this.lastMessages[index])
           if (this.lastMessages[index]['user_id'] != this.$route.params.id) {
             this.$router.push({
               name: 'ChatID',

@@ -7,7 +7,7 @@
         <img src="../assets/images/not-found.png" />
         <h2>{{ $t('page_not_found') }}</h2>
         <router-link
-          :to="{ name: `${isAuthenticated ? 'Dashboard' : 'Home'}` }"
+          :to="{ name: `${isAuthenticated ? 'Home' : 'Dashboard'}` }"
           class="link"
         >
           {{ $t('go_to_dashboard') }}

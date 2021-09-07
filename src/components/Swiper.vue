@@ -105,7 +105,7 @@
       <span class="title" v-if="title.length">{{ $t(title) }}</span>
     </div>
     <el-dialog
-      :title="title"
+      :title="$t(title)"
       :visible.sync="showDialog"
       :close-on-click-modal="false"
       :close-on-escape="false"

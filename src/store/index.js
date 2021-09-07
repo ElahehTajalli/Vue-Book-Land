@@ -10,7 +10,10 @@ const getDefaultState = () => {
     self: null,
     fullscreen: false,
     lastRequestedPath: '',
-    showMenu: false
+    showMenu: false,
+    posts: [],
+    books: [],
+    quotes: []
   }
 }
 const state = getDefaultState()
@@ -33,6 +36,15 @@ const mutations = {
   },
   SET_SHOW_MENU(state, showMenu) {
     state.showMenu = showMenu
+  },
+  SET_BOOKS(state, books) {
+    state.books = books
+  },
+  SET_POSTS(state, posts) {
+    state.posts = posts
+  },
+  SET_QUOTES(state, quotes) {
+    state.quotes = quotes
   }
 }
 

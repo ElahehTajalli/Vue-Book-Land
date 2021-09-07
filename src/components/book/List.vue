@@ -11,21 +11,23 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import { mapActions, mapGetters } from 'vuex'
   import Detail from '@/components/book/Detail'
   import Filters from '@/components/book/Filters'
   export default {
     data() {
       return {
-        books: [],
         loading: false
       }
     },
     created() {
       this.handleGetBooks()
     },
+    computed: {
+      ...mapGetters(['books'])
+    },
     methods: {
-      ...mapActions(['handleRequest']),
+      ...mapActions(['handleRequest', 'setBooks']),
       handleGetBooks() {
         this.loading = true
         this.handleRequest({
@@ -39,7 +41,7 @@
           }
         })
           .then((res) => {
-            this.books = res.data.books
+            this.setBooks(res.data.books)
           })
           .finally(() => {
             this.loading = false
