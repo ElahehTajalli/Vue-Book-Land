@@ -155,7 +155,7 @@
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapActions } from 'vuex'
   import { Cropper } from 'vue-advanced-cropper'
   import 'vue-advanced-cropper/dist/style.css'
   export default {
@@ -241,9 +241,6 @@
       this.handleGetAuthors()
       this.handleGetTranslators()
     },
-    computed: {
-      ...mapGetters(['books'])
-    },
     methods: {
       ...mapActions(['handleRequest', 'setBooks']),
       addBook() {
@@ -260,14 +257,11 @@
           action: 'create',
           data: formData
         })
-          .then((res) => {
+          .then(() => {
             this.$message({
               type: 'success',
               message: this.$i18n.t('the_book_was_successfully_added')
             })
-            let books = this.books
-            books.push(res)
-            this.setBooks(books)
 
             this.handleClose()
             this.loading = false

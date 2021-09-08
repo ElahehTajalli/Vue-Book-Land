@@ -122,11 +122,12 @@
         windowWidth: window.innerWidth,
         options: [],
         search: [],
-        loading: false
+        loading: false,
+        books: []
       }
     },
     computed: {
-      ...mapGetters(['isAuthenticated', 'self', 'books', 'showMenu'])
+      ...mapGetters(['isAuthenticated', 'self', 'showMenu'])
     },
     methods: {
       ...mapActions([
@@ -174,7 +175,7 @@
             }
           }
         }).then((res) => {
-          this.setBooks(res.data.books)
+          this.books = res.data.books
         })
       },
       handleRouting(name) {

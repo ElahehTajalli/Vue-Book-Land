@@ -11,20 +11,18 @@
 </template>
 
 <script>
-  import { mapActions, mapGetters } from 'vuex'
+  import { mapActions } from 'vuex'
   import Detail from '@/components/book/Detail'
   import Filters from '@/components/book/Filters'
   export default {
     data() {
       return {
-        loading: false
+        loading: false,
+        books: []
       }
     },
     created() {
       this.handleGetBooks()
-    },
-    computed: {
-      ...mapGetters(['books'])
     },
     methods: {
       ...mapActions(['handleRequest', 'setBooks']),
@@ -41,7 +39,7 @@
           }
         })
           .then((res) => {
-            this.setBooks(res.data.books)
+            this.books = res.data.books
           })
           .finally(() => {
             this.loading = false

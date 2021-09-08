@@ -84,6 +84,7 @@
       return {
         loading: false,
         bookDialog: false,
+        books: [],
         addPostForm: {
           text: '',
           rate: 0,
@@ -117,7 +118,7 @@
       this.handleGetBooks()
     },
     computed: {
-      ...mapGetters(['self', 'books'])
+      ...mapGetters(['self'])
     },
     methods: {
       ...mapActions(['handleRequest', 'setBooks']),
@@ -166,7 +167,7 @@
             }
           }
         }).then((res) => {
-          this.setBooks(res.data.books)
+          this.books = res.data.books
         })
       },
       handleCloseBookDialog() {
