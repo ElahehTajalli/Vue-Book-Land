@@ -221,7 +221,6 @@
         let { key } = e
         if (key === 'Enter') {
           e.preventDefault()
-          // this.handleLoginFormSubmit()
         }
       },
       changeRoute(name) {

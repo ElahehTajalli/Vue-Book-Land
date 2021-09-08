@@ -18,7 +18,6 @@
         </div>
       </div>
       <img class="main-logo" src="../assets/images/dashboard.svg" />
-      <!-- <img class="main-logo" src="../assets/images/reading-book.jpg" /> -->
     </div>
     <SlideShow :quotes="quotes" />
     <Swiper :books="newest" title="newest" class="newest" />

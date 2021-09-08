@@ -298,7 +298,6 @@
             this.getRelationships('followers', 'total_followers', {
               following_id: this.$route.params.id
             })
-            //Send message
           })
           .finally(() => (this.buttonLoading = false))
       },
@@ -318,7 +317,6 @@
             this.getRelationships('followers', 'total_followers', {
               following_id: this.$route.params.id
             })
-            //Send message
           })
           .finally(() => (this.buttonLoading = false))
       },

@@ -129,7 +129,6 @@
   import { mapActions, mapGetters } from 'vuex'
   import moment from 'moment-jalaali'
   import Comment from '@/components/comment/Comment'
-  // import Criticism from '@/components/post/Criticism'
   export default {
     data() {
       return {
@@ -255,7 +254,6 @@
     },
     components: {
       Comment
-      // Criticism
     }
   }
 </script>
